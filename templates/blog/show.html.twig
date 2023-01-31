@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<section class="articles"> 
+   <h1> {{article.title}}</h1>
+
+   <h6> Ecrit le 15/05/2022 dans la catégorie ville  </h6> 
+ 
+     <p> {{article.content}}</p> 
+
+<p> Le principal intérêt est que l'on peut changer le comportement d'une application sans en changer le code, et ajouter de nombreux comportements sur une même action, sans pour autant que ces comportements soient liés entre eux.
+
+Nous avons vu que Symfony dispose de nombreux événements natifs qui sont envoyés aux écouteurs durant le cycle de vie de l'application. 
+
+Enfin, il est également possible de créer et de "dispatcher" ses propres événements métiers </p> 
+</section > 
+{% endblock %}
