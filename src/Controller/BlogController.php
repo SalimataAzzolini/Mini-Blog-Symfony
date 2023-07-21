@@ -16,8 +16,6 @@ class BlogController extends AbstractController
      */
     public function index(ArticleRepository $repo): Response
     {
-        # mis à la place articleRepository en param en dependance
-        # $repo = $this->getDoctrine()->getRepository(Article::class);
 
         $articles = $repo->findAll();
         return $this->render('blog/index.html.twig', [
@@ -32,7 +30,7 @@ class BlogController extends AbstractController
     public function home(){
         return $this-> render ('blog/home.html.twig', [
         'title' => "Bienvenue ici les amis ",
-        'age' => "31"]
+        'age' => "28"]
     );
 
     }
@@ -40,8 +38,6 @@ class BlogController extends AbstractController
      * @Route("/blog/{id}", name="blog_show")
      */
     public function show(ArticleRepository $repo, $id){
-    #possible d'écrire aussi en param (Article $article) et d'effacer la ligne dessous
-    #$repo = $this->getDoctrine()->getRepository(Article::class);
     $article = $repo->find($id);
      return $this->render('blog/show.html.twig', [
         'article' => $article
